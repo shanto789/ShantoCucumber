@@ -1,5 +1,14 @@
 package smarttech.ny.generic;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
-public class CommonUtil {
+import smarttech.ny.basepage.ParentClass;
 
+public class CommonUtil extends ParentClass {
+
+	public static void actionClick(WebElement ele) {
+		Actions ac = new Actions(driver);
+		ac.click(ele).build().perform();
+	}
+	
 }
