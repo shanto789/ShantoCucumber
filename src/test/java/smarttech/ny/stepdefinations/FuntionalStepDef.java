@@ -7,6 +7,7 @@ import org.testng.Assert;
 
 import smarttech.ny.basepage.ParentClass;
 import smarttech.ny.elementspage.MasterPageFactory;
+import smarttech.ny.generic.CommonUtil;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -20,16 +21,18 @@ public class FuntionalStepDef extends ParentClass  {
 		//pf.getEnterPassword().sendKeys("Tester01");
 		//pf.getClickOnLoginBTN().click();
 		pf.getLogin(prop.getProperty("UserName"), prop.getProperty("Password"));
-		String expected = "Home";
-		String actual = driver.findElement(By.xpath("//*[text()=' Home']")).getText();
-		Assert.assertEquals(expected, actual);
 		
-	    System.out.println("Expected Value Is : " + actual);
+		String text = pf.getVerifyHomePage().getText();
+		
+		Assert.assertEquals("Home", text);
+		
+	   
 	}
 	@When("Users Able To Click On Products Module")
 	public void users_able_to_click_on_products_module() {
-	   
-	    
+	 // pf.getClickOnProduct().click();
+	  
+		CommonUtil.actionClick(pf.getClickOnProduct());
 	}
 	@Then("Users Able To Verify {string} Text Are Available On The Screen")
 	public void users_able_to_verify_text_are_available_on_the_screen(String string) {

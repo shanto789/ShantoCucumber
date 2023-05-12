@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 		
 		plugin = {"pretty","json:target/cucumber.json" },
 		features = {".//Feature/"},
-		glue = {"smarttech.ny.stepdefinations","smarttech.ny.hooks"}  
+		glue = {"smarttech.ny.stepdefinations","smarttech.ny.hooks"}    
 		
 		
 		)

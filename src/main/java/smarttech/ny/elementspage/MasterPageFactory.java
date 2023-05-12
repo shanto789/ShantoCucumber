@@ -33,6 +33,19 @@ public WebElement getClickOnLoginBTN() {
 	return clickOnLoginBTN;
 }
 
+@FindBy(xpath = "//*[text()=' Home']")
+@CacheLookup
+private WebElement verifyHomePage;
+public WebElement getVerifyHomePage() {
+	return verifyHomePage;
+}
+@FindBy(xpath = "//*[text()=' Products']")
+@CacheLookup
+private WebElement clickOnProduct;
+public WebElement getClickOnProduct() {
+	return clickOnProduct;
+}
+
 public void getLogin(String userName, String pwd) {
 	getEnterEmail().sendKeys(userName);
 	getEnterPassword().sendKeys(pwd);
