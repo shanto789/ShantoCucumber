@@ -25,7 +25,7 @@ public class FuntionalStepDef extends ParentClass  {
 		String text = pf.getVerifyHomePage().getText();
 		
 		Assert.assertEquals("Home", text);
-		
+		System.out.println("Expected Value IS : " + text);
 	   
 	}
 	@When("Users Able To Click On Products Module")
